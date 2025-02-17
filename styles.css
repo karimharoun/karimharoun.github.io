@@ -1,0 +1,189 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background: #f9f9f9;
+}
+
+/* header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+} */
+
+
+header {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.header-container {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+} */
+
+main {
+  max-width: 1200px;
+  margin: 100px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70vh;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+ul li strong {
+  color: #333;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.contact-info {
+  margin-top: auto;
+}
+.bio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.bio img {
+  width: 40%; /* Image takes 35% of the container width */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 20px; /* Margin between image and text */
+  border-radius: 100%;
+}
+
+
+.text-content {
+  width: 65%; /* Text takes the remaining 65% of the container width */
+  padding-right: 20px;
+ 
+}
+
+
+.text-content p {
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.links a {
+  color : #1E90FF;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: none; /* Adds underline when hovering */
+  color: #237f96; /* Optional: Change the color on hover */
+}
+
+.links .b {
+  color : #1E90FF;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.links .b:hover {
+  text-decoration: none; /* Adds underline when hovering */
+  color: #237f96; /* Optional: Change the color on hover */
+}
+
+footer {
+  text-align: center;
+  background: #333;
+  color: white;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+.pdf-container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+embed, iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+.publications ul li {
+  font-size: 14px;
+  line-height: 1.5;
+  list-style-type: disc;
+}

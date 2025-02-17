@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <!-- Leaflet CSS for map styling -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Leaflet JavaScript for map functionality -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 100px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      min-height: 70vh;
+    }
+
+
+
+    h2 {
+      color: #333;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    form {
+      width: 50%; 
+      height: 400px;
+      margin: 0 auto;
+      background-color: #f9f9f9;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+      margin-top: 0;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    form textarea {
+      height: 200px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+
+    #mapid {
+      height: 400px;  /* Set the height of the map */
+      width: 80%;    /* Set the width to 100% of the container */
+      margin: 0 auto;
+    }
+  </style>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("i2q_mlbfVpC7DhLxY"); // Replace with your EmailJS public key
+    })();
+  </script>
+  
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">Resume</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Map Container (on top now) -->
+    <div id="mapid"></div>
+
+    <h2>Contact me</h2>
+    <form id="contact-form">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="response-message"></p>
+
+  </main>
+
+  <!-- <footer>
+    <p>&copy; 2025 Karim Haroun</p>
+  </footer> -->
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+  
+      var templateParams = {
+        from_name: name,
+        from_email: email,
+        message: message
+      };
+  
+      emailjs.send('service_nn3n8n2', 'template_mv43pa9', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            document.getElementById('response-message').innerHTML = "Your message has been sent!";
+            document.getElementById('contact-form').reset();
+        }, function(error) {
+            console.log('FAILED...', error);
+            document.getElementById('response-message').innerHTML = "Failed to send message. Please try again.";
+        });
+    });
+
+    // Leaflet map initialization
+    document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the map
+    var map = L.map('mapid').setView([48.712814662571404, 2.1934227846549303], 16); // Set the coordinates of your lab and zoom level
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add a marker for your lab location
+    L.marker([48.712814662571404, 2.1934227846549303]).addTo(map)
+      .bindPopup("<b>CEA-LIST</b><br>2 Boulevard Thomas Gobert<br>91120 Palaiseau")
+      .openPopup();
+    });
+  </script>
+  
+</body>
+</html>
