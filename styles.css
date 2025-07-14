@@ -124,7 +124,7 @@ a:hover {
   width: 40%; /* Image takes 35% of the container width */
   height: auto; /* Maintain aspect ratio */
   margin-left: 20px; /* Margin between image and text */
-  border-radius: 100%;
+  /* border-radius: 100%; */
 }
 
 
