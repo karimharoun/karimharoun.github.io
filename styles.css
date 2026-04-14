@@ -132,13 +132,15 @@ p {
   width: 100%;
 }
 
-.text-content h1 {
-  margin-bottom: 16px;
+.text-content h1,
+.text-content h2 {
+  margin-bottom: 18px;
   color: var(--ink);
 }
 
 .text-content p {
   color: #2f3d3f;
+  text-align: justify;
 }
 
 .text-content .links {
