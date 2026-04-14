@@ -184,6 +184,7 @@ p {
   border-radius: var(--radius-soft);
   padding: clamp(22px, 3vw, 34px);
   animation: fade-rise 650ms ease both;
+  text-align: justify;
 }
 
 .section-title {
@@ -265,6 +266,7 @@ p {
 .research {
   color: var(--muted);
   font-size: 0.95rem;
+  text-align: justify;
 }
 
 .experience-details {
