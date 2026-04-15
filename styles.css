@@ -134,7 +134,7 @@ p {
 
 .text-content h1,
 .text-content h2 {
-  margin-bottom: 18px;
+  margin-bottom: 30px;
   color: var(--ink);
 }
 
@@ -148,7 +148,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .links .b {
@@ -158,7 +158,6 @@ p {
   border-radius: 999px;
   padding: 10px 14px;
   font-weight: 600;
-  margin-top: auto;
 }
 
 .links .b:hover {
@@ -170,7 +169,7 @@ p {
   width: 100%;
   max-width: 450px;
   justify-self: center;
-  border-radius: 52% 48% 47% 53% / 45% 57% 43% 55%;
+  border-radius: 50% / 50%;
   border: 7px solid rgba(255, 255, 255, 0.95);
   box-shadow: 0 16px 28px rgba(22, 44, 44, 0.2);
   align-self: center;
@@ -185,6 +184,65 @@ p {
   padding: clamp(22px, 3vw, 34px);
   animation: fade-rise 650ms ease both;
   text-align: justify;
+  margin-bottom: 28px;
+}
+
+main.teaching .section-card {
+  background: rgba(243, 248, 247, 0.95);
+  border-color: rgba(25, 42, 42, 0.12);
+}
+
+.course-card {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(25, 42, 42, 0.08);
+  box-shadow: 0 18px 38px rgba(23, 45, 45, 0.08);
+  border-radius: var(--radius-soft);
+  padding: 26px;
+  margin-top: 18px;
+}
+
+main.teaching h2 {
+  font-size: clamp(2rem, 2.2vw, 2.6rem);
+  margin-bottom: 14px;
+}
+
+main.teaching h3 {
+  font-size: 1.15rem;
+  margin-top: 24px;
+  margin-bottom: 10px;
+  color: #203535;
+}
+
+main.teaching h4 {
+  font-size: 0.98rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4d6969;
+}
+
+.course-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin: 20px 0;
+}
+
+.course-summary ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+main.teaching .course-card header p {
+  margin-top: 8px;
+  color: #4f6a6a;
+  font-style: italic;
+}
+
+@media (max-width: 780px) {
+  .course-summary {
+    grid-template-columns: 1fr;
+  }
 }
 
 .section-title {
